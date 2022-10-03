@@ -58,7 +58,8 @@ order.post("/", async (req, res) => {
     cvv: req.body.cvv,
     orders: req.body.orders,
     date: req.body.date,
-    realdate: req.body.realdate
+    realdate: req.body.realdate,
+    totalsum: req.body.totalsum
   });
   try {
     const saveOrdering = await ordering.save();

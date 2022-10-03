@@ -6,18 +6,17 @@ const routeReviews = require("./routes/reviews");
 const routeOrder = require("./routes/orders");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+require("dotenv/config")
 
 app.use(bodyParser.json());
 app.use(cors());
 
 mongoose
   .connect(
-    "mongodb+srv://aibek:1q2w3e4r@cluster0.cnmrppi.mongodb.net/",
+    process.env.DB_CONNECTION,
     { useNewUrlParser: true },
     (err) => {
       console.log("ok");
-      
-      console.log({ fucking_database: err });
     }
   );
 
