@@ -30,14 +30,25 @@ order.delete("/:postId", async (req, res) => {
 });
 
 order.patch("/:postId", async (req, res) => {
-  const { name, address, email, phone, ccnum, expyear, cvv, orders, date, realdate} = req.body;
+  const {
+    name,
+    address,
+    email,
+    phone,
+    ccnum,
+    expyear,
+    cvv,
+    orders,
+    date,
+    realdate,
+  } = req.body;
   try {
     const updatedordering = await Orders.findOneAndUpdate(
       {
         _id: req.params.postId,
       },
       {
-        $set: req.body
+        $set: req.body,
       }
     );
     res.json(updatedordering);
@@ -48,7 +59,6 @@ order.patch("/:postId", async (req, res) => {
 
 order.post("/", async (req, res) => {
   const ordering = new Orders({
-
     name: req.body.name,
     address: req.body.address,
     email: req.body.email,
@@ -59,7 +69,7 @@ order.post("/", async (req, res) => {
     orders: req.body.orders,
     date: req.body.date,
     realdate: req.body.realdate,
-    totalsum: req.body.totalsum
+    totalsum: req.body.totalsum,
   });
   try {
     const saveOrdering = await ordering.save();
@@ -68,6 +78,5 @@ order.post("/", async (req, res) => {
     res.json({ message: err });
   }
 });
-
 
 module.exports = order;

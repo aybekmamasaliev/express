@@ -6,19 +6,18 @@ const routeReviews = require("./routes/reviews");
 const routeOrder = require("./routes/orders");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-require("dotenv/config")
+require("dotenv/config");
 
 app.use(bodyParser.json());
 app.use(cors());
 
-mongoose
-  .connect(
-    process.env.DB_CONNECTION,
-    { useNewUrlParser: true },
-    (err) => {
-      console.log("ok");
-    }
-  );
+mongoose.connect(
+  process.env.DB_CONNECTION,
+  { useNewUrlParser: true },
+  (err) => {
+    console.log("ok");
+  }
+);
 
 app.get("/", (req, res) => {
   res.send("working");
