@@ -7,10 +7,8 @@ const routeOrder = require("./routes/orders");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 require("dotenv/config");
-
 app.use(bodyParser.json());
 app.use(cors());
-
 mongoose.connect(
   process.env.DB_CONNECTION,
   { useNewUrlParser: true },
