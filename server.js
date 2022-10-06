@@ -17,7 +17,7 @@ mongoose.connect(
   }
 );
 
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
   res.send("working");
 });
 
