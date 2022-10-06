@@ -21,11 +21,11 @@ app.get("/api", (req, res) => {
   res.send("working");
 });
 
-app.use("/user", routeUser);
+app.use("/api/user", routeUser);
 
-app.use("/reviews", routeReviews);
+app.use("/api/reviews", routeReviews);
 
-app.use("/orders", routeOrder);
+app.use("/api/orders", routeOrder);
 
 app.listen(3050, () => {
   console.log("connected");
