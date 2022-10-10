@@ -33,7 +33,6 @@ order.patch("/:postId", async (req, res) => {
   const {
     name,
     address,
-    // email,
     phone,
     ccnum,
     expyear,
@@ -61,7 +60,6 @@ order.post("/", async (req, res) => {
   const ordering = new Orders({
     name: req.body.name,
     address: req.body.address,
-    // email: req.body.email,
     phone: req.body.phone,
     ccnum: req.body.ccnum,
     expyear: req.body.expyear,
