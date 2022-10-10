@@ -17,10 +17,6 @@ const GoodsSchema = mongoose.Schema({
     type: String,
     require: true
   },
-  count: {
-    type: String,
-    require: false
-  },
   type: {
     type: String,
     require: true
