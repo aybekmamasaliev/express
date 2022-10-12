@@ -21,11 +21,11 @@ app.get("/api", (req, res) => {
   res.send("working");
 });
 
-app.use("api/user", routeUser);
+app.use("/api/user", routeUser);
 
-app.use("api/reviews", routeReviews);
+app.use("/api/reviews", routeReviews);
 
-app.use("api/orders", routeOrder);
+app.use("/api/orders", routeOrder);
 
 app.use((req, res, next) => {
   res.status(404).send("Sorry can't find that!")
