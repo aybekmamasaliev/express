@@ -27,6 +27,10 @@ app.use("api/reviews", routeReviews);
 
 app.use("api/orders", routeOrder);
 
+app.use((req, res, next) => {
+  res.status(404).send("Sorry can't find that!")
+})
+
 app.listen(3050, () => {
   console.log("connected");
 });
