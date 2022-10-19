@@ -11,6 +11,14 @@ order.get("/", async (req, res) => {
   }
 });
 
+order.get("/length", async (req, res) => {
+  try {
+    const ordering = await Orders.find().count;
+    res.json(ordering);
+  } catch (err) {
+    res.json({ message: err });
+  }
+});
 
 order.get("/:postId", async (req, res) => {
   try {
