@@ -20,10 +20,7 @@ const OrderSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  cvv: {
-    type: String,
-    required: true,
-  },
+  cvv: {type: String,required: true},
   orders: [],
   date: {type: String,required: true
   },
