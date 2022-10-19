@@ -13,7 +13,7 @@ order.get("/", async (req, res) => {
 
 order.get("/length", async (req, res) => {
   try {
-    const ordering = await Orders.find().count;
+    const ordering =  (await Orders.find()).length;
     res.json(ordering);
   } catch (err) {
     res.json({ message: err });
