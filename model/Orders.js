@@ -25,9 +25,7 @@ const OrderSchema = mongoose.Schema({
     required: true,
   },
   orders: [],
-  date: {
-    type: String,
-    required: true,
+  date: {type: String,required: true
   },
   realdate: { type: String, required: true },
   totalsum: { type: String, required: true },
