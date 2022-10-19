@@ -11,14 +11,6 @@ order.get("/", async (req, res) => {
   }
 });
 
-order.get("/length", async (req, res) => {
-  try {
-    const ordering = await Orders.find().length;
-    res.json(ordering);
-  } catch (err) {
-    res.json({ message: err });
-  }
-});
 
 order.get("/:postId", async (req, res) => {
   try {
@@ -49,7 +41,8 @@ order.patch("/:postId", async (req, res) => {
     orders,
     date,
     realdate,
-    ordernumber
+    ordernumber,
+    status
   } = req.body;
   try {
     const updatedordering = await Orders.findOneAndUpdate(
