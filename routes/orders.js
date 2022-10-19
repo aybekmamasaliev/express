@@ -4,7 +4,7 @@ const Orders = require("../model/Orders");
 
 order.get("/", async (req, res) => {
   try {
-    const ordering = await Orders.find();
+    const ordering = await (await Orders.find()).length;
     res.json(ordering);
   } catch (err) {
     res.json({ message: err });
