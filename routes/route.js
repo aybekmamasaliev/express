@@ -49,7 +49,6 @@ route.patch("/:postId", async (req, res) => {
 
 route.post("/", async (req, res) => {
   const goods = new Goods({
-
     name: req.body.name,
     price: req.body.price,
     img: req.body.img,

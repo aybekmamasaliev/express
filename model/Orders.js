@@ -30,8 +30,9 @@ const OrderSchema = mongoose.Schema({
     required: true,
   },
   realdate: { type: String, required: true },
-
   totalsum: { type: String, required: true },
+  ordernumber: { type: String, required: true },
+  status: { type: String, required: true }
 });
 
 module.exports = mongoose.model("Orders", OrderSchema);
